@@ -1,0 +1,25 @@
+﻿{
+  "manifest_version": 2,
+  "name": "拆字",
+  "description": "将你在页面中输入的中文自动拆分成若干个中文组成",
+  "version": "2019.01.23",
+  "author": "sarlanori",
+
+  "permissions": [
+    "tabs"
+  ],
+  "icons": {
+    "16": "static/images/icon16.png",
+    "48": "static/images/icon48.png",
+    "128": "static/images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "static/images/icon16.png"
+  },
+  "content_scripts": [{
+    "matches": ["file:///*", "http://*/*", "https://*/*"],
+    "js": ["static/js/chai.js", "content_script.js"],
+    "all_frames": true,
+    "run_at": "document_end"
+  }]
+}
